@@ -34,7 +34,7 @@ def update_counter(file_name, reset=False):
         f = open(file_name,'rb+')
         counter = load(f)
         counter += 1
-        dump(counter, f)
+        dump(counter, open(file_name, 'wb'))
         f.close()
     else:
         f = open(file_name, 'wb')
